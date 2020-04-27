@@ -25,6 +25,7 @@ const CardActions = styled.div`
   padding: ${({ theme }) => `0 ${theme.spacing.small}`};
   margin-bottom: ${({ theme }) => theme.spacing.small};
   display: flex;
+  align-items: center;
 `;
 
 const CardMenuWrapper = styled.div`

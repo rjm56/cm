@@ -5,11 +5,13 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #edf0f5; //TODO: move to theme
+  min-height: 100vh;
+  padding: 100px;
+  background-color: #f5f8ff; //TODO: move to theme
 `;
 
 const CardWrapper = styled.div`
-  flex: 0 1 calc(33.3333% - 8px);
+  flex: 0 1 calc(25% - 8px);
 `;
 
 export default () => (
