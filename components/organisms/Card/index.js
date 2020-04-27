@@ -5,7 +5,7 @@ import { Subheading } from "../../atoms/Subheading";
 import { CardDescription } from "../../atoms/CardDescription";
 import { FavouriteIcon } from "../../atoms/FavouriteIcon";
 import { CardMenu } from "../../molecules/CardMenu";
-import { mediaTypes } from "../../../constants/mediaTypes";
+import { cardMediaTypes } from "../../../constants/mediaTypes";
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
@@ -64,7 +64,11 @@ export const Card = ({
 };
 
 Card.propTypes = {
-  media: shape({ type: oneOf(mediaTypes), src: string.isRequired }),
+  media: shape({
+    type: oneOf(cardMediaTypes),
+    src: string.isRequired,
+    alt: string,
+  }),
   header: string.isRequired,
   subheading: string.isRequired,
   copy: string,

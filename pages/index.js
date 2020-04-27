@@ -18,7 +18,11 @@ export default () => (
   <Wrapper>
     <CardWrapper>
       <Card
-        media={{ type: "img", src: "www.image.com" }}
+        media={{
+          type: "img",
+          src: "image-placeholder.png",
+          alt: "placeholder image",
+        }}
         header="Important announcement"
         subheading="4 hours ago"
         includeFavourite

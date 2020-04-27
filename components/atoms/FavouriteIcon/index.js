@@ -14,6 +14,7 @@ export const FavouriteIcon = () => {
   return (
     <Wrapper
       onClick={handleClick}
+      tabIndex="0"
       aria-label={
         isFavourited ? "Un-favourite this card" : "Favourite this card"
       }
