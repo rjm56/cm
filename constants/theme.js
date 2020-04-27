@@ -5,6 +5,7 @@ export const theme = {
     small: { size: "14px", lineHeight: "22px" },
   },
   colors: {
+    white: "#ffffff",
     primary: "#2A2941",
     action: "#1254FF",
     border: "#d2d7df",
