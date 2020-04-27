@@ -1,10 +1,5 @@
-import styled from "styled-components";
 import { Dropdown } from "../../atoms/Dropdown";
-import { MenuSvg } from "./menu";
-
-const Wrapper = styled.div`
-  position: relative;
-`;
+import { MenuSvg } from "./menuSvg";
 
 export const CardMenu = () => {
   const cardMenuOptions = [

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const MenuTrigger = styled.div`
+const MenuTrigger = styled.button`
   cursor: pointer;
   padding: ${({ theme }) => theme.spacing.tiny};
   border: ${({ theme, isOpen }) =>
@@ -45,6 +45,7 @@ const MenuItem = styled.li`
 
 export const Dropdown = ({ renderMenuIcon, options, onSelect }) => {
   const wrapper = useRef();
+  const menuItems = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (e) => setIsOpen(!isOpen);
@@ -59,7 +60,6 @@ export const Dropdown = ({ renderMenuIcon, options, onSelect }) => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -76,9 +76,13 @@ export const Dropdown = ({ renderMenuIcon, options, onSelect }) => {
         {renderMenuIcon(isOpen)}
       </MenuTrigger>
       {isOpen && (
-        <MenuItems>
+        <MenuItems ref={menuItems}>
           {options.map(({ id, label }) => (
-            <MenuItem key={id} onClick={() => handleSelectItem(id)}>
+            <MenuItem
+              tabIndex="0"
+              key={id}
+              onClick={() => handleSelectItem(id)}
+            >
               {label}
             </MenuItem>
           ))}
