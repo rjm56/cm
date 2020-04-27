@@ -9,7 +9,7 @@ const Wrapper = styled.section`
 `;
 
 const CardWrapper = styled.div`
-  flex: 0 1 calc(25% - 8px);
+  flex: 0 1 calc(33.3333% - 8px);
 `;
 
 export default () => (
@@ -18,7 +18,7 @@ export default () => (
       <Card
         media={{ type: "img", src: "www.image.com" }}
         header="Important announcement"
-        lastEdited="4 hours ago"
+        subheading="4 hours ago"
         includeFavourite
         includeCardMenu
       />
@@ -26,7 +26,7 @@ export default () => (
     <CardWrapper>
       <Card
         header="Important announcement"
-        lastEdited="4 hours ago"
+        subheading="4 hours ago"
         copy="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
         includeFavourite
         includeCardMenu
@@ -35,12 +35,12 @@ export default () => (
     <CardWrapper>
       <Card
         header="Important announcement"
-        lastEdited="4 hours ago"
+        subheading="4 hours ago"
         includeCardMenu
       />
     </CardWrapper>
     <CardWrapper>
-      <Card header="Important announcement" lastEdited="4 hours ago" />
+      <Card header="Important announcement" subheading="4 hours ago" />
     </CardWrapper>
   </Wrapper>
 );

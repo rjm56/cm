@@ -1,12 +1,12 @@
 import { string, bool, shape, oneOf } from "prop-types";
 import { CardMedia } from "../../atoms/CardMedia";
 import { CardHeader } from "../../atoms/CardHeader";
-import { LastEdited } from "../../atoms/LastEdited";
+import { Subheading } from "../../atoms/Subheading";
+import { CardDescription } from "../../atoms/CardDescription";
 import { FavouriteIcon } from "../../atoms/FavouriteIcon";
 import { CardMenu } from "../../molecules/CardMenu";
 import { mediaTypes } from "../../../constants/mediaTypes";
 import styled from "styled-components";
-import { CardDescription } from "../../atoms/CardDescription";
 
 const CardWrapper = styled.div`
   background: ${({ theme }) => theme.colors.white};
@@ -34,7 +34,7 @@ const CardMenuWrapper = styled.div`
 export const Card = ({
   media,
   header = "",
-  lastEdited = "",
+  subheading = "",
   copy = "",
   includeFavourite = false,
   includeCardMenu = false,
@@ -44,7 +44,7 @@ export const Card = ({
       {!!media && <CardMedia {...media} />}
       <CardContent withImage={!!media}>
         <CardHeader>{header}</CardHeader>
-        <LastEdited lastEdited={lastEdited} />
+        <Subheading subheading={subheading} />
 
         {!!copy && <CardDescription>{copy}</CardDescription>}
       </CardContent>
@@ -65,7 +65,7 @@ export const Card = ({
 Card.propTypes = {
   media: shape({ type: oneOf(mediaTypes), src: string.isRequired }),
   header: string.isRequired,
-  lastEdited: string.isRequired,
+  subheading: string.isRequired,
   copy: string,
   includeFavourite: bool,
   includeCardMenu: bool,

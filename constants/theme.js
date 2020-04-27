@@ -1,8 +1,8 @@
 export const theme = {
-  fontSize: {
-    large: { size: "24px", lineHeight: "32px" },
-    medium: { size: "16px", lineHeight: "24px" },
-    small: { size: "14px", lineHeight: "22px" },
+  font: {
+    large: { fontSize: "24px", lineHeight: "32px" },
+    medium: { fontSize: "16px", lineHeight: "24px" },
+    small: { fontSize: "14px", lineHeight: "22px" },
   },
   colors: {
     white: "#ffffff",
