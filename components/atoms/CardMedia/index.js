@@ -2,14 +2,17 @@ import { oneOf, string } from "prop-types";
 import { cardMedia, cardMediaTypes } from "../../../constants/mediaTypes";
 import styled from "styled-components";
 
-const BackgroundImage = styled.div`
+const BackgroundImage = styled.span`
+  display: block;
+  background: ${({ source }) => `url(${source})`} center center no-repeat;
+  background-size: cover;
   height: 200px;
-  width: 100%;
-  background: ${({ src }) => `url(${src})`} center center no-repeat;
 `;
 
 const Video = styled.video`
   width: 100%;
+  object-fit: cover;
+  height: 200px;
 `;
 
 export const CardMedia = ({ type, src, alt }) => {
@@ -19,7 +22,11 @@ export const CardMedia = ({ type, src, alt }) => {
     }
 
     if (type === cardMedia.image || cardMedia.svg) {
-      return <BackgroundImage src={src} alt={alt} />;
+      return (
+        <div>
+          <BackgroundImage source={src} role="img" aria-label={alt} />
+        </div>
+      );
     }
   };
 

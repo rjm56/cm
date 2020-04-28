@@ -5,11 +5,12 @@ export const theme = {
     small: { fontSize: "14px", lineHeight: "22px" },
   },
   colors: {
-    white: "#ffffff",
     primary: "#2A2941",
     action: "#1254FF",
+    white: "#ffffff",
     border: "#d2d7df",
     borderAction: "#aacbff",
+    background: "#f5f8ff",
   },
   spacing: {
     large: "32px",

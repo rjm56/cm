@@ -45,7 +45,6 @@ const MenuItem = styled.li`
 
 export const Dropdown = ({ renderMenuIcon, options, onSelect }) => {
   const wrapper = useRef();
-  const menuItems = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (e) => setIsOpen(!isOpen);
@@ -76,7 +75,7 @@ export const Dropdown = ({ renderMenuIcon, options, onSelect }) => {
         {renderMenuIcon(isOpen)}
       </MenuTrigger>
       {isOpen && (
-        <MenuItems ref={menuItems}>
+        <MenuItems>
           {options.map(({ id, label }) => (
             <MenuItem
               tabIndex="0"

@@ -9,6 +9,7 @@ import { cardMediaTypes } from "../../../constants/mediaTypes";
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
+  width: 100%;
   background: ${({ theme }) => theme.colors.white};
   border: ${({ theme }) => `1px solid ${theme.colors.border}`};
   border-radius: 5px;
