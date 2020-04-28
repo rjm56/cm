@@ -1,16 +1,12 @@
-import styled from "styled-components";
-import { Copy } from "../Typography";
 import { node } from "prop-types";
-
-const StyledCardDescription = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing.medium};
-`;
+import { Copy } from "../Typography";
+import { Wrapper } from "./styles";
 
 export const CardDescription = ({ children }) => {
   return (
-    <StyledCardDescription>
+    <Wrapper>
       <Copy>{children}</Copy>
-    </StyledCardDescription>
+    </Wrapper>
   );
 };
 

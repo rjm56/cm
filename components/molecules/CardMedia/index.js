@@ -1,24 +1,21 @@
 import { oneOf, string } from "prop-types";
 import { cardMedia, cardMediaTypes } from "../../../constants/mediaTypes";
-import styled from "styled-components";
-
-const BackgroundImage = styled.span`
-  display: block;
-  background: ${({ source }) => `url(${source})`} center center no-repeat;
-  background-size: cover;
-  height: 200px;
-`;
-
-const Video = styled.video`
-  width: 100%;
-  object-fit: cover;
-  height: 200px;
-`;
+import { Video } from "../../atoms/Video";
+import { BackgroundImage } from "../../atoms/BackgroundImage";
 
 export const CardMedia = ({ type, src, alt }) => {
   const renderMedia = () => {
     if (type === cardMedia.video) {
-      return <Video src={src} autoPlay="autoPlay" loop muted alt={alt} />;
+      return (
+        <Video
+          src={src}
+          autoPlay="autoPlay"
+          loop
+          muted
+          title={alt}
+          poster="video-placeholder.png"
+        />
+      );
     }
 
     if (type === cardMedia.image || cardMedia.svg) {
@@ -34,7 +31,7 @@ export const CardMedia = ({ type, src, alt }) => {
 };
 
 CardMedia.propTypes = {
-  type: oneOf(cardMediaTypes),
+  type: oneOf(cardMediaTypes).isRequired,
   src: string.isRequired,
-  alt: string,
+  alt: string.isRequired,
 };

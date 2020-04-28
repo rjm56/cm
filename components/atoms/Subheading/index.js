@@ -1,12 +1,8 @@
 import { string } from "prop-types";
 import { Copy } from "../Typography";
-import styled from "styled-components";
+import { Wrapper } from "./styles";
 
-const Wrapper = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing.medium};
-`;
-
-export const Subheading = ({ subheading }) => {
+export const Subheading = ({ subheading = "" }) => {
   return (
     <Wrapper>
       <Copy as="h3">{subheading}</Copy>

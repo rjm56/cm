@@ -1,15 +1,13 @@
 import { node } from "prop-types";
 import { Header } from "../Typography";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  margin: ${({ theme }) => `0 0 ${theme.spacing.small}`};
-`;
+import { Wrapper } from "./styles";
 
 export const CardHeader = ({ children }) => {
   return (
     <Wrapper>
-      <Header>{children}</Header>
+      <Header shouldTruncate lineNo={2}>
+        {children}
+      </Header>
     </Wrapper>
   );
 };
