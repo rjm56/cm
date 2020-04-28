@@ -13,5 +13,5 @@ export const CardHeader = ({ children }) => {
 };
 
 CardHeader.propTypes = {
-  children: node,
+  children: node.isRequired,
 };

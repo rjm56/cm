@@ -1,5 +1,6 @@
 export const cardVariants = [
   {
+    id: "variant-1",
     media: {
       type: "img",
       src: "image-placeholder.png",
@@ -11,6 +12,7 @@ export const cardVariants = [
     includeCardMenu: true,
   },
   {
+    id: "variant-2",
     media: {
       type: "img",
       src: "image-placeholder.png",
@@ -25,6 +27,7 @@ export const cardVariants = [
   },
 
   {
+    id: "variant-3",
     header: "Important announcement",
     subheader: "4 hours ago",
     description:
@@ -33,20 +36,24 @@ export const cardVariants = [
     includeCardMenu: true,
   },
   {
+    id: "variant-4",
     header: "Important announcement",
     subheader: "2 days ago",
     includeCardMenu: true,
   },
   {
+    id: "variant-5",
     header: "Important announcement",
     subheader: "3 days ago",
     includeFavourite: true,
   },
   {
+    id: "variant-6",
     header: "Important announcement",
     subheader: "1 hour ago",
   },
   {
+    id: "variant-7",
     media: {
       type: "video/mp4",
       src: "video-placeholder.png",

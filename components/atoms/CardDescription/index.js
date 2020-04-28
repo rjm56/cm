@@ -10,4 +10,4 @@ export const CardDescription = ({ children }) => {
   );
 };
 
-CardDescription.propTypes = { children: node };
+CardDescription.propTypes = { children: node.isRequired };

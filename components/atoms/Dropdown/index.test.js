@@ -1,9 +1,9 @@
 import { shallow, mount } from "enzyme";
-import { Dropdown } from ".";
 import { act } from "react-dom/test-utils";
 import { findDOMNode } from "react-dom";
-import { MenuTrigger, MenuItems, MenuItem } from "./styles";
 import { ThemeProvider } from "styled-components";
+import { MenuTrigger, MenuItems, MenuItem } from "./styles";
+import { Dropdown } from ".";
 import { theme } from "../../../constants/theme";
 
 describe("Dropdown", () => {
@@ -13,7 +13,7 @@ describe("Dropdown", () => {
     { id: "2", label: "test option 2" },
   ];
   let component;
-  let onSelect = jest.fn();
+  const onSelect = jest.fn();
 
   const mockProps = {
     renderMenuIcon,
@@ -74,26 +74,26 @@ describe("Dropdown", () => {
       map[event] = cb;
     });
 
-    const component = mount(
+    const mountedComponent = mount(
       <ThemeProvider theme={theme}>
         <Dropdown {...mockProps} />
       </ThemeProvider>
     );
 
     act(() => {
-      component.find(MenuTrigger).simulate("click");
+      mountedComponent.find(MenuTrigger).simulate("click");
     });
-    component.update();
+    mountedComponent.update();
 
-    expect(component.find(MenuItems)).toExist();
+    expect(mountedComponent.find(MenuItems)).toExist();
 
     act(() => {
       map.mousedown({
-        target: findDOMNode(component.instance()),
+        target: findDOMNode(mountedComponent.instance()),
       });
     });
-    component.update();
+    mountedComponent.update();
 
-    expect(component.find(MenuItems)).not.toExist();
+    expect(mountedComponent.find(MenuItems)).not.toExist();
   });
 });

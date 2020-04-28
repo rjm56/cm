@@ -6,7 +6,7 @@ export const Dropdown = ({ renderMenuIcon, options, onSelect }) => {
   const wrapper = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (e) => setIsOpen(!isOpen);
+  const handleClick = () => setIsOpen(!isOpen);
 
   const handleClickOutside = (e) => {
     if (wrapper.current && wrapper.current.contains(e.target)) {

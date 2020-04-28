@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Card } from "../components/organisms/Card/index.js";
-import { mediaQuery } from "../utils/mediaQuery.js";
+import { Card } from "../components/organisms/Card/index";
+import { mediaQuery } from "../utils/mediaQuery";
 import { cardVariants } from "../mocks/cardVariants";
 
 const Container = styled.div`
@@ -39,6 +39,7 @@ export default () => (
     <Wrapper>
       {cardVariants.map(
         ({
+          id,
           media,
           header,
           subheader,
@@ -47,7 +48,7 @@ export default () => (
           includeCardMenu,
         }) => {
           return (
-            <CardWrapper>
+            <CardWrapper key={id}>
               <Card
                 media={media}
                 header={header}

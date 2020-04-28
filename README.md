@@ -1,101 +1,70 @@
-# Example app with styled-components
+<h1 align="center">Campaign Monitor UI test</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+## Prerequisites
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs#custom-app) component.
+node: v10.17
 
-## Deploy your own
+## Install
 
-Deploy the example using [Vercel](https://vercel.com):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-styled-components)
-
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npm init next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
+```sh
+npm i
 ```
 
-### Download manually
+## Usage
 
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-styled-components
-cd with-styled-components
-```
-
-Install it and run:
-
-```bash
-npm install
+```sh
 npm run dev
-# or
-yarn
-yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Try it on CodeSandbox
+## Unit tests
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/zeit/next.js/tree/canary/examples/with-styled-components)
+Unit tests are written using [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/).
 
-### Notes
+Run all unit tests:
 
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import React from 'react'
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
+```bash
+npm run test
 ```
 
-**pages/index.js**
+## Linting
 
-```javascript
-import React from 'react'
-import StyledLink from '../components/StyledLink'
+This project uses the airbnb eslint [config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
 
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
+Run lint:
+
+```sh
+npm run lint
 ```
 
-</details>
+## More information
+
+All styling has been done using [Styled Components](https://styled-components.com/).
+
+This project has been bootstrapped with `create-next-app` to ensure it is a 'production ready' example. Next.js provides a number of features such as server side rendering, routing and code splitting 'out of the box'. Further information about the Next.js features and API can be found in the [Next.js Documentation](https://nextjs.org/docs).
+
+## Architectural decisions
+
+While Next.js is opinionated on some structure, such as the 'pages' directory for routing, it leaves all other architectural decisions to the developer.
+
+In this project, component structure is based on the atomic design methodology with atoms, molecules and organisms. This has loosely been based on the principles laid out within this [guide](https://atomicdesign.bradfrost.com/chapter-2/).
+
+## Potential future improvements
+
+- Add a component library tool such as [Storybook](https://storybook.js.org/) to enable code-sharing and an 'at a glance' view of component variations.
+- Add feature testing with a library like [Cypress.io](https://www.cypress.io/).
+- Add visual regression tests with a tool like [Percy.io](https://percy.io/).
+
+## Author
+
+👤 **Rosie Morris**
+
+- Github: [@rjm56](https://github.com/rjm56)
+- LinkedIn: [profile](https://www.linkedin.com/in/rosannamorris/)

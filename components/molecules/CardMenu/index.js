@@ -8,6 +8,7 @@ export const CardMenu = () => {
     { id: "preview", label: "Preview" },
   ];
 
+  // eslint-disable-next-line no-console
   const handleSelectItem = (id) => console.log(`selected ${id}`);
 
   return (
