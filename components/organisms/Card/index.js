@@ -1,7 +1,7 @@
 import { string, bool, shape, oneOf } from "prop-types";
 import { CardMedia } from "../../molecules/CardMedia";
 import { CardHeader } from "../../atoms/CardHeader";
-import { Subheading } from "../../atoms/Subheading";
+import { Subheader } from "../../atoms/Subheader";
 import { CardDescription } from "../../atoms/CardDescription";
 import { FavouriteIcon } from "../../atoms/FavouriteIcon";
 import { CardMenu } from "../../molecules/CardMenu";
@@ -11,8 +11,8 @@ import { Wrapper, CardContent, CardMenuWrapper, CardActions } from "./styles";
 export const Card = ({
   media,
   header,
-  subheading,
-  copy = "",
+  subheader,
+  description = "",
   includeFavourite = false,
   includeCardMenu = false,
 }) => {
@@ -21,9 +21,9 @@ export const Card = ({
       {!!media && <CardMedia {...media} />}
       <CardContent withImage={!!media}>
         <CardHeader>{header}</CardHeader>
-        <Subheading subheading={subheading} />
+        <Subheader subheader={subheader} />
 
-        {!!copy && <CardDescription>{copy}</CardDescription>}
+        {!!description && <CardDescription>{description}</CardDescription>}
       </CardContent>
       {(includeFavourite || includeCardMenu) && (
         <CardActions>
@@ -46,8 +46,8 @@ Card.propTypes = {
     alt: string.isRequired,
   }),
   header: string.isRequired,
-  subheading: string.isRequired,
-  copy: string,
+  subheader: string.isRequired,
+  description: string,
   includeFavourite: bool,
   includeCardMenu: bool,
 };

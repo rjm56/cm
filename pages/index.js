@@ -43,7 +43,7 @@ export default () => (
             alt: "placeholder image",
           }}
           header="Countdown announcement unlimited pizza for everyone"
-          subheading="4 hours ago"
+          subheader="4 hours ago"
           includeFavourite
           includeCardMenu
         />
@@ -56,8 +56,8 @@ export default () => (
             alt: "placeholder image",
           }}
           header="Countdown announcement unlimited pizza for everyone"
-          subheading="4 hours ago"
-          copy="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
+          subheader="4 hours ago"
+          description="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
           includeFavourite
           includeCardMenu
         />
@@ -65,8 +65,8 @@ export default () => (
       <CardWrapper>
         <Card
           header="Important announcement"
-          subheading="4 hours ago"
-          copy="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
+          subheader="4 hours ago"
+          description="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
           includeFavourite
           includeCardMenu
         />
@@ -74,12 +74,12 @@ export default () => (
       <CardWrapper>
         <Card
           header="Important announcement"
-          subheading="4 hours ago"
+          subheader="4 hours ago"
           includeCardMenu
         />
       </CardWrapper>
       <CardWrapper>
-        <Card header="Important announcement" subheading="4 hours ago" />
+        <Card header="Important announcement" subheader="4 hours ago" />
       </CardWrapper>
     </Wrapper>
   </Container>

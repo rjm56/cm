@@ -18,13 +18,11 @@ export const CardMedia = ({ type, src, alt }) => {
       );
     }
 
-    if (type === cardMedia.image || cardMedia.svg) {
-      return (
-        <div>
-          <BackgroundImage source={src} role="img" aria-label={alt} />
-        </div>
-      );
-    }
+    return (
+      <div>
+        <BackgroundImage source={src} role="img" aria-label={alt} />
+      </div>
+    );
   };
 
   return renderMedia();

@@ -2,14 +2,14 @@ import { string } from "prop-types";
 import { Copy } from "../Typography";
 import { Wrapper } from "./styles";
 
-export const Subheading = ({ subheading = "" }) => {
+export const Subheader = ({ subheader = "" }) => {
   return (
     <Wrapper>
-      <Copy as="h3">{subheading}</Copy>
+      <Copy as="h3">{subheader}</Copy>
     </Wrapper>
   );
 };
 
-Subheading.propTypes = {
-  subheading: string,
+Subheader.propTypes = {
+  subheader: string,
 };
