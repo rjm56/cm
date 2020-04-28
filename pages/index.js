@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Card } from "../components/organisms/Card/index.js";
 import { mediaQuery } from "../utils/mediaQuery.js";
+import { cardVariants } from "../mocks/cardVariants";
 
 const Container = styled.div`
   padding: 24px;
@@ -31,56 +32,34 @@ const Logo = styled.img`
     margin: ${({ theme }) => `0 ${theme.spacing.tiny} 40px`};
   `}
 `;
+
 export default () => (
   <Container>
     <Logo src="https://cm-commerce.com/wp-content/themes/receiptful/assets/img/cmcommerce/brand/logo-minimal.svg" />
     <Wrapper>
-      <CardWrapper>
-        <Card
-          media={{
-            type: "img",
-            src: "image-placeholder.png",
-            alt: "placeholder image",
-          }}
-          header="Countdown announcement unlimited pizza for everyone"
-          subheader="4 hours ago"
-          includeFavourite
-          includeCardMenu
-        />
-      </CardWrapper>
-      <CardWrapper>
-        <Card
-          media={{
-            type: "img",
-            src: "image-placeholder.png",
-            alt: "placeholder image",
-          }}
-          header="Countdown announcement unlimited pizza for everyone"
-          subheader="4 hours ago"
-          description="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
-          includeFavourite
-          includeCardMenu
-        />
-      </CardWrapper>
-      <CardWrapper>
-        <Card
-          header="Important announcement"
-          subheader="4 hours ago"
-          description="A card is a flexible and extensible content container. It includes a wide variety of content, thumbnails, video, images, subheadings, actions, and content."
-          includeFavourite
-          includeCardMenu
-        />
-      </CardWrapper>
-      <CardWrapper>
-        <Card
-          header="Important announcement"
-          subheader="4 hours ago"
-          includeCardMenu
-        />
-      </CardWrapper>
-      <CardWrapper>
-        <Card header="Important announcement" subheader="4 hours ago" />
-      </CardWrapper>
+      {cardVariants.map(
+        ({
+          media,
+          header,
+          subheader,
+          description,
+          includeFavourite,
+          includeCardMenu,
+        }) => {
+          return (
+            <CardWrapper>
+              <Card
+                media={media}
+                header={header}
+                subheader={subheader}
+                description={description}
+                includeFavourite={includeFavourite}
+                includeCardMenu={includeCardMenu}
+              />
+            </CardWrapper>
+          );
+        }
+      )}
     </Wrapper>
   </Container>
 );
