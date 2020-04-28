@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-const breakpoints = { desktop: 992, tablet: 768 };
+const breakpoints = { xLarge: 1100, desktop: 992, tablet: 768 };
 
 export const mediaQuery = Object.keys(breakpoints).reduce(
   (accumulator, label) => {
